@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-export const Navbar = () => {
+export const Navbar = ({ children }) => {
   return (
     <nav className="nav-bar">
       <Logo />
       <Search />
-      <NumResults />
+      {children}
     </nav>
   )
 }
@@ -30,13 +30,5 @@ export const Search = () => {
       value={query}
       onChange={(e) => setQuery(e.target.value)}
     />
-  )
-}
-
-export const NumResults = () => {
-  return (
-    <p className="num-results">
-      Found <strong>X</strong> results
-    </p>
   )
 }
